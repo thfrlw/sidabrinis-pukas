@@ -186,7 +186,7 @@ aside {
 
     .affix-top .nav > li > a {
       color: white;
-      text-shadow: 0 0 10px black, 0 0 7px black, 0 0 2px black;
+      text-shadow: 0 0 40px black, 0 0 30px black, 0 0 3px black;
     }
 
     .navbar-default .nav > li>a:hover,
