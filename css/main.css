@@ -9,7 +9,7 @@ page-column {
   display: block;
 }
 
-[parallax] {
+parallax {
   height: 600px; /* fallback for older browsers */
   overflow-x: hidden;
   overflow-y: auto;
@@ -19,8 +19,7 @@ page-column {
   perspective-origin-x: 100%;
 }
 
-[parallax] > group,
-[parallax] > [group] {
+parallax > group {
   position: relative;
   height: 600px; /* fallback for older browsers */
   -webkit-transform-style: preserve-3d;
