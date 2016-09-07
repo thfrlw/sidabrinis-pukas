@@ -183,7 +183,6 @@ page-column {
   [main-bg],
   [works-bg] {
     min-height: 400px;
-    background-attachment: fixed;
   }
 }
 
