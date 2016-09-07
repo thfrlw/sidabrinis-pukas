@@ -10,20 +10,30 @@ page-column {
 }
 
 parallax {
-  height: 600px; /* fallback for older browsers */
+  /*height: 600px;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-perspective: 300px;
   perspective: 300px;
   -webkit-perspective-origin-x: 100%;
-  perspective-origin-x: 100%;
+  perspective-origin-x: 100%;*/
 }
 
 parallax > group {
   position: relative;
-  height: 600px; /* fallback for older browsers */
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  min-height: 400px; /* fallback for older browsers */
+  /*-webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;*/
+}
+
+layer {
+  /*position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  -webkit-transform-origin-x: 100%;
+  transform-origin-x: 100%;*/
 }
 
 @media (min-width: 480px) and (min-height: 540px) {
@@ -44,29 +54,28 @@ parallax > group {
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
+  layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    -webkit-transform-origin-x: 100%;
+    transform-origin-x: 100%;
+  }
+  layer[base] {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    z-index: 4;
+  }
+
+  layer[back] {
+    -webkit-transform: translateZ(-300px) scale(2);
+    transform: translateZ(-300px) scale(2);
+    z-index: 3;
+  }
 }
 
-layer {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  -webkit-transform-origin-x: 100%;
-  transform-origin-x: 100%;
-}
-
-layer[base] {
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  z-index: 4;
-}
-
-layer[back] {
-  -webkit-transform: translateZ(-300px) scale(2);
-  transform: translateZ(-300px) scale(2);
-  z-index: 3;
-}
 
 
 /* style the parallax groups
@@ -97,8 +106,10 @@ layer[back] {
 /* styles
 --------------------------------------------- */
 
-body, html {
-  overflow: hidden;
+@media (min-width: 480px) and (min-height: 540px) {
+  body, html {
+    overflow: hidden;
+  }
 }
 
 body {
@@ -156,10 +167,34 @@ page-column {
   }
 }
 
+@media (max-width: 479px) and (max-height: 539px) {
+  .main-bg {
+    min-height: 400px;
+    background-attachment: fixed;
+  }
+}
 
 .main-bg {
-  background: url('../img/header.jpg') no-repeat center center;
+  background-image: url('../img/header.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
+}
+
+[works-bg] {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+@media (orientation: portrait) {
+  [works-bg] {
+    background-image: url('../img/darbai-p.jpg');
+  }
+}
+@media (orientation: landscape) {
+  [works-bg] {
+    background-image: url('../img/darbai-l.jpg');
+  }
 }
 [page-bg] {
   background-color: #fefefe;
