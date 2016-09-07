@@ -167,35 +167,38 @@ page-column {
   }
 }
 
-@media (max-width: 479px) and (max-height: 539px) {
-  .main-bg {
-    min-height: 400px;
-    background-attachment: fixed;
-  }
-}
 
-.main-bg {
+[main-bg] {
   background-image: url('../img/header.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
 }
 
+[main-bg],
 [works-bg] {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
 }
+
+@media (max-width: 479px) {
+  [main-bg],
+  [works-bg] {
+    min-height: 400px;
+    background-attachment: fixed;
+  }
+}
+
 @media (orientation: portrait) {
   [works-bg] {
     background-image: url('../img/darbai-p.jpg');
   }
 }
+
 @media (orientation: landscape) {
   [works-bg] {
     background-image: url('../img/darbai-l.jpg');
   }
 }
+
 [page-bg] {
   background-color: #fefefe;
 }
