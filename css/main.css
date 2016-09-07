@@ -209,6 +209,7 @@ h2[white] {
 
 h2 {
   font-size: 110%;
+  margin-top: 10px;
 }
 
 @media (min-width: 480px) {
